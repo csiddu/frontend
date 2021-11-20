@@ -29,7 +29,7 @@ if (error) {
                     <div className="container mx-auto px-4 py-10">
                     <div className="items-center flex">
                       <div className="w-full/2 mx-12 ml-auto mr-auto p-5">
-                        <img
+                        <img alt="..."
                           className="max-w-full rounded-lg shadow-lg"
                           src={event.image}/>
                       </div>

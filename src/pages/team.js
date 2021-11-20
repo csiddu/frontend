@@ -23,7 +23,7 @@ export default function Team() {
             <div className="md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-5">
               <div className="px-6 lg:w-10/12">
                 <div className="lg:w-9/12 shadow-2xl rounded-full max-w-full mx-auto">
-                  <img src={memb.image}
+                  <img alt="..." src={memb.image}
                      className="rounded-full"/>
                 </div>
                 <div className="mt-6 text-center">
@@ -38,17 +38,17 @@ export default function Team() {
                   </p>
                   <div className="mt-3 flex justify-around">
                     <div className="text-blue-600 focus:outline-none">
-                      <a href="https://google.com" target="_blank">
+                      <a href="https://google.com" >
                         <i className="fab fa-linkedin-in"></i>
                       </a>
                     </div>
                     <div className="text-black focus:outline-none">
-                      <a href="https://google.com" target="_blank">
+                      <a href="https://google.com" >
                         <i className="fab fa-github"></i>
                       </a>
                     </div>
                     <div className="text-blue-400 focus:outline-none">
-                      <a href="https://google.com" target="_blank">
+                      <a href="https://google.com" >
                         <i className="fab fa-twitter"></i>
                       </a>
                     </div>
