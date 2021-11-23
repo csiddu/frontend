@@ -1,6 +1,13 @@
 import React, { useState, useEffect }  from 'react';
 
 const Events = () => {
+const Loading = () => {
+    return (
+      <div class="flex w-screen h-screen justify-center items-center">
+        <div class="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-600"></div>
+      </div>
+    )
+  }
 const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [events, setEvents] = useState([]);
@@ -21,7 +28,7 @@ const [error, setError] = useState(null);
 if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <Loading />
     } else {
         return (
             <div>

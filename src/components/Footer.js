@@ -1,27 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faInstagram, faYoutube, faMediumM } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-44 bg-black">
-      <p className="text-white text-sm">CSI DDU Student Chapter</p>
-      <div className="flex">
-        <hr className="mt-3 sm:w-80 lg:w-96"/> <hr className="mt-3 w-36"/> <hr className="mt-3 sm:w-80 lg:w-96"/>
-      </div>
-      <div className="text-sm mt-3 flex justify-start text-gray-400">
-        <Link to={{ pathname: "/team" }}>
-          Our Team &nbsp;&nbsp;
-        </Link>|&nbsp;&nbsp; 
-        <Link to={{ pathname: "/events" }}>
-          Events &nbsp;&nbsp;
-        </Link>|&nbsp;&nbsp; 
-        <Link to={{ pathname: "/contact" }}>
-          Contact Us
-        </Link>
-      </div>
-
+    <div className="w-full flex items-center justify-center bg-black">
+      <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
+        <div className="flex flex-col">
+          <div className="flex mt-24 mb-12 flex-col justify-between">   
+              <div className="flex self-center lg:space-x-28 space-x-5">
+                <a href="team" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Our Team</a>
+                <a href="events" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Events</a>
+                <a href="blog" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Blogs</a>
+                <a href="contact" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Contact</a>     
+              </div>
+              <div className="mt-5 flex flex-row justify-evenly">
+                <Link to={{ pathname: "https://instagram.com/csi_ddu"}} href="www.google.com">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </Link>
+                <Link to={{ pathname: "https://github.com/csiddu"}} href="www.google.com">
+                  <FontAwesomeIcon icon={faGithub} />
+                </Link>
+                <Link to={{ pathname: "https://medium.com/@csi_ddu"}} href="www.google.com">
+                  <FontAwesomeIcon icon={faMediumM} />
+                </Link>
+                <Link to={{ pathname: "https://www.youtube.com/channel/UCmDmg-bp4Vd5tYIZsYnDDmA/featured"}} href="www.google.com">
+                  <FontAwesomeIcon icon={faYoutube} />
+                </Link>
+              </div>
+            </div>
+            <hr className="border-gray-600"/>
+            <p className="w-full text-center my-12 text-gray-600">Copyright © 2021 CSI DDU Student Chapter</p>
+          </div>
+        </div>
     </div>
-  );
+    );
 };
 
 export default Footer;

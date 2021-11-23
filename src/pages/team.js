@@ -11,6 +11,14 @@ export default function Team() {
         data.sort((a, b) => (a.id) < (b.id) ? -1:0);
         setTeam(data); setIsLoaded(true) })
   }, [])
+
+  const Loading = () => {
+    return (
+      <div class="flex w-screen h-screen justify-center items-center">
+        <div class="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-600"></div>
+      </div>
+    )
+  }
   
   function TeamComp(sec,start,end) {
     return(
@@ -63,7 +71,7 @@ export default function Team() {
   }
 
   if(!isLoaded) {
-    return <div>Loading...</div>
+    return <Loading />
   } else {
     return (
       <div>
