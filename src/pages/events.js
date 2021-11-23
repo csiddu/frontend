@@ -20,7 +20,7 @@ const [error, setError] = useState(null);
                     setEvents(data);
                 },
                 (error) => {
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                     setError(error);
                 }
             )

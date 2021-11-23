@@ -51,7 +51,11 @@ const Contact = () => {
     }
     if (name !== '' && email !== '' && subject !== '' && message !== '' && validateEmail(email) === true) {
       setErrors('');
-      window.open(`mailto:csiddu2021@gmail.com?subject=${subject}&body=${message} Regards ${name + email}`);
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+      window.open(`mailto:csiddu2021@gmail.com?subject=${subject}&body=${message} \nRegards ${name + email}`);
     }
 
   };
