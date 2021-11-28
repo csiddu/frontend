@@ -6,7 +6,7 @@ export default function Team() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("http://csiddu-website-backend.herokuapp.com/teams")
+    fetch("https://csiddu-website-backend.herokuapp.com/teams")
       .then(res => res.json())
       .then((data) => {
         data.sort((a, b) => (a.id) < (b.id) ? -1 : 0);
