@@ -1,20 +1,38 @@
 import React, { useState, useEffect, Suspense } from 'react';
+import { Switch, Route, useLocation } from 'react-router-dom';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
+import Home from './pages/home/home';
 import Navbar from './components/Navbar';
-import { Switch, Route } from 'react-router-dom';
-import Home from './pages/home';
+import Dropdown from './components/Dropdown';
+import Footer from './components/Footer';
+
 const Events = React.lazy(() => import('./pages/events'));
 const Blogs = React.lazy(() => import('./pages/blogs'));
 const Team = React.lazy(() => import('./pages/team'));
 const Contact = React.lazy(() => import('./pages/contact'));
 const EventReg = React.lazy(() => import('./pages/eventReg'));
 const EventFeed = React.lazy(() => import('./pages/eventFeed'));
-const Dropdown = React.lazy(() => import('./components/Dropdown'));
-const Footer = React.lazy(() => import('./components/Footer'));
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => {  setIsOpen(!isOpen);  };
+  const location = useLocation();
+
+  useEffect(() => {
+    AOS.init({
+      once: true, disable: 'phone', duration: 700, easing: 'ease-out-cubic',
+    });
+  });
+
+  useEffect(() => {
+    document.querySelector('html').style.scrollBehavior = 'auto'
+    window.scroll({ top: 0 })
+    document.querySelector('html').style.scrollBehavior = ''
+  }, [location.pathname]);
+
 
   useEffect(() => {
     const hideMenu = () => {
