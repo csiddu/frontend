@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="w-full flex items-center justify-center bg-black">
       <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
         <div className="flex flex-col">
-          <div className="flex mt-24 mb-12 flex-col justify-between">   
+          <div className="flex mt-24 mb-6 flex-col justify-between">   
               <div className="flex self-center lg:space-x-28 space-x-5">
                 <a href="team" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Our Team</a>
                 <a href="events" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Events</a>
