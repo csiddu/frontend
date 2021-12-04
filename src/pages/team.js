@@ -51,7 +51,7 @@ export default function Team() {
                     {memb.position}
                   </p>
                   {memb.tagline && start < 11? <p className="mt-3 text-xs text-gray-500 uppercase font-semibold">
-                    I do not fear semicolons, I fear lack of them.
+                    {memb.tagline}
                   </p> : null}
                   <div className="mt-3 flex lg:justify-around justify-evenly">
                     {memb.linkedin !== "" && start < 11 ? <div className="text-blue-600 focus:outline-none">
