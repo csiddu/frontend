@@ -36,7 +36,7 @@ export default function Team() {
           {sec}
         </h1>
         <div className="mt-10 flex lg:flex-row flex-col justify-center">
-          {team.slice(start,end).map(memb => (
+          {team.slice(start, end).map(memb => (
             <div className="md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-5">
               <div className="px-6 lg:w-10/12 py-10">
                 <div className="lg:w-9/12 w-32 shadow-2xl rounded-full max-w-full mx-auto">
@@ -50,25 +50,26 @@ export default function Team() {
                   <p className="mt-3 text-red-600 text-xs uppercase font-semibold">
                     {memb.position}
                   </p>
-                  <p className="mt-3 text-xs text-gray-500 uppercase font-semibold">
+                  {memb.tagline ? <p className="mt-3 text-xs text-gray-500 uppercase font-semibold">
                     I do not fear semicolons, I fear lack of them.
-                  </p>
+                  </p> : null}
                   <div className="mt-3 flex lg:justify-around justify-evenly">
-                    <div className="text-blue-600 focus:outline-none">
-                      <a href="https://google.com" >
+                    {memb.linkedin !== "" ? <div className="text-blue-600 focus:outline-none">
+                      <a href={memb.linkedin} target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={faLinkedin} size="lg" />
                       </a>
-                    </div>
-                    <div className="text-black focus:outline-none">
-                      <a href="https://google.com" >
-                      <FontAwesomeIcon icon={faGithub} size="lg" />
+                    </div> : null}
+
+                    {memb.github ? <div className="text-black focus:outline-none">
+                      <a href={memb.github} target="_blank" rel="noreferrer" >
+                        <FontAwesomeIcon icon={faGithub} size="lg" />
                       </a>
-                    </div>
-                    <div className="text-blue-400 focus:outline-none">
-                      <a href="https://google.com" >
+                    </div> : null}
+                    {memb.twitter ? <div className="text-blue-400 focus:outline-none">
+                      <a href={memb.twitter} target="_blank" rel="noreferrer" >
                         <FontAwesomeIcon icon={faTwitter} size="lg" />
                       </a>
-                    </div>
+                    </div> : null}
                   </div>
                 </div>
               </div>
@@ -85,15 +86,15 @@ export default function Team() {
     return <Loading />
   } else {
     return (
-      <div>  
-        {TeamComp("Our Mentor",0,1)}
-        {TeamComp("Core Team",1,3)}
-        {TeamComp("Technical Team",3,6)}
-        {TeamComp("Management Team",6,9)}
-        {TeamComp("Social Media and Designing Team",9,11)}
-        {TeamComp("Our Juniors",11,14)}
-        {TeamComp("",14,17)}
-        {TeamComp("",17,20)}
+      <div>
+        {TeamComp("Our Mentor", 0, 1)}
+        {TeamComp("Core Team", 1, 3)}
+        {TeamComp("Technical Team", 3, 6)}
+        {TeamComp("Management Team", 6, 9)}
+        {TeamComp("Social Media and Designing Team", 9, 11)}
+        {TeamComp("Our Juniors", 11, 14)}
+        {TeamComp("", 14, 17)}
+        {TeamComp("", 17, 20)}
       </div>
     )
   }
