@@ -3,7 +3,6 @@ import React from 'react';
 import Landing from './Landing';
 import WWR from './WWR';
 import WDWD from './WDWD';
-import Quote from './quote';
 import Upevents from './upevents';
 
 function Home() {
@@ -15,7 +14,6 @@ function Home() {
         <Upevents />
         <WWR />
         <WDWD />
-        <Quote />
       </main>
     </div>
   );
