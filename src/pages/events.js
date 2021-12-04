@@ -32,27 +32,51 @@ if (error) {
     } else {
         return (
             <div>
-                {events.sort((a, b) => (a.id) > (b.id) ? -1:0).map(event =>(
+                {events.sort((a, b) => (a.id) > (b.id) ? -1:0).map(event => {
+                if(event.id %2 == 0) return (
+                  <div className="container mx-auto px-4 py-10">
+                  <div className="items-center flex">
+                    <div className="w-full md:w-2/3 px-4">
+                      <div>
+                        <h3 className="text-5xl text-center font-semibold">
+                          {event.title}
+                        </h3>
+                        <p className="mt-5 text-sm text-center leading-relaxed text-gray-600">
+                          {event.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="w-2/3 mx-12 ml-auto mr-auto p-5">
+                      <img alt="..."
+                        className="max-w-full rounded-lg shadow-lg"
+                        src={event.image}/>
+                    </div>
+                  </div>
+                </div>
+                )
+                
+                else return (
                     <div className="container mx-auto px-4 py-10">
                     <div className="items-center flex">
-                      <div className="w-full/2 mx-12 ml-auto mr-auto p-5">
+                      <div className="w-2/3 mx-12 ml-auto mr-auto p-5">
                         <img alt="..."
                           className="max-w-full rounded-lg shadow-lg"
                           src={event.image}/>
                       </div>
                       <div className="w-full md:w-5/12 px-4">
                         <div>
-                          <h3 className="text-5xl font-semibold">
+                          <h3 className="text-5xl text-center font-semibold">
                             {event.title}
                           </h3>
-                          <p className="mt-5 text-lg leading-relaxed text-gray-600">
+                          <p className="mt-5 text-sm text-center leading-relaxed text-gray-600">
                             {event.description}
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
+                )   
+    })}
             </div>
         );
     }
