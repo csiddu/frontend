@@ -50,22 +50,22 @@ export default function Team() {
                   <p className="mt-3 text-red-600 text-xs uppercase font-semibold">
                     {memb.position}
                   </p>
-                  {memb.tagline ? <p className="mt-3 text-xs text-gray-500 uppercase font-semibold">
-                    I do not fear semicolons, I fear lack of them.
+                  {memb.tagline && start < 11? <p className="mt-3 text-xs text-gray-500 uppercase font-semibold">
+                    {memb.tagline}
                   </p> : null}
                   <div className="mt-3 flex lg:justify-around justify-evenly">
-                    {memb.linkedin !== "" ? <div className="text-blue-600 focus:outline-none">
+                    {memb.linkedin !== "" && start < 11 ? <div className="text-blue-600 focus:outline-none">
                       <a href={memb.linkedin} target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={faLinkedin} size="lg" />
                       </a>
                     </div> : null}
 
-                    {memb.github ? <div className="text-black focus:outline-none">
+                    {memb.github && start < 11 ? <div className="text-black focus:outline-none">
                       <a href={memb.github} target="_blank" rel="noreferrer" >
                         <FontAwesomeIcon icon={faGithub} size="lg" />
                       </a>
                     </div> : null}
-                    {memb.twitter ? <div className="text-blue-400 focus:outline-none">
+                    {memb.twitter && start < 11 ? <div className="text-blue-400 focus:outline-none">
                       <a href={memb.twitter} target="_blank" rel="noreferrer" >
                         <FontAwesomeIcon icon={faTwitter} size="lg" />
                       </a>

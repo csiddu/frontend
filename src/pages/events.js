@@ -33,7 +33,7 @@ if (error) {
         return (
             <div>
                 {events.sort((a, b) => (a.id) > (b.id) ? -1:0).map(event => {
-                if(event.id %2 == 0) return (
+                if(event.id %2 === 0) return (
                   <div className="container mx-auto px-4 py-10">
                   <div className="items-center lg:flex">
                     <div className="w-full md:w-2/3 px-4">
