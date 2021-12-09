@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
 
 export default function Upevents() {
   const [error, setError] = useState(null);
@@ -36,7 +35,7 @@ export default function Upevents() {
         {events.map(event => (
           event.register === true ? 
           <div>
-          <p className="text-center font-bold text-3xl animate-pulse">Upcomming Event</p>
+          <p className="text-center font-bold text-3xl animate-pulse">Upcoming Event</p>
       <div class="lg:flex p-10">
       <div class="bg-blue-600 rounded-lg lg:w-2/12 py-4 block h-full">
         <div class="text-center tracking-wide">
@@ -62,9 +61,9 @@ export default function Upevents() {
         </div>
       </div>
       <div class="flex flex-row items-center w-full lg:w-1/3 bg-white lg:justify-end justify-center px-2 py-4 lg:px-0">
-        <Link to={{ pathname:"register" }} class="tracking-wider text-gray-600 bg-gray-200 px-2 text-sm rounded leading-loose mx-2 font-semibold">
+        <a href={event.rlink} class="tracking-wider text-gray-600 bg-gray-200 px-2 text-sm rounded leading-loose mx-2 font-semibold">
           Register Here
-        </Link>
+        </a>
       </div>
     </div> 
     </div>

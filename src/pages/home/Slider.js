@@ -4,11 +4,12 @@ import { Carousel } from '3d-react-carousal';
 function Slider() {
     
       let slides = [
-        <img  src="https://picsum.photos/800/300/?random" alt="1" />,
-      <img  src="https://picsum.photos/800/301/?random" alt="2" />  ,
-      <img  src="https://picsum.photos/800/302/?random" alt="3" />  , 
-      <img  src="https://picsum.photos/800/303/?random" alt="4" />  ,
-      <img src="https://picsum.photos/800/304/?random" alt="5" />  ];
+        <img  src={require("../../assets/img/events/1.png").default} alt="1" />,
+        <img  src={require("../../assets/img/events/2.png").default} alt="2" />,
+        <img  src={require("../../assets/img/events/3.png").default} alt="3" />,
+        <img  src={require("../../assets/img/events/4.png").default} alt="4" />,
+        <img  src={require("../../assets/img/events/5.png").default} alt="5" />,
+          ];
       
       return (
         <div className="App">

@@ -24,9 +24,7 @@ function Landing() {
               <div className="flex flex-col justify-center">
                 <img className="mx-auto" src={require('../../assets/img/4.jpg').default} width="768" height="432" alt="Hero" />
               </div>
-              <div className="absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg">
-                <p>Caption</p>
-              </div>
+              
             </div>
 
           </div>

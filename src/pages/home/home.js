@@ -10,6 +10,7 @@ function Home() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-grow">
+      
         <Landing />
         <Upevents />
         <WWR />
