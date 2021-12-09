@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Upevents() {
   const [error, setError] = useState(null);
   const [events, setEvent] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"];
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June",
+  "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   useEffect(() => {
     fetch("https://csiddu-website-backend.herokuapp.com/events")
@@ -60,11 +61,11 @@ export default function Upevents() {
           {event.venue}
         </div>
       </div>
-      <button onClick={() => alert(1)} class="flex flex-row items-center w-full lg:w-1/3 bg-white lg:justify-end justify-center px-2 py-4 lg:px-0">
-        <span class="tracking-wider text-gray-600 bg-gray-200 px-2 text-sm rounded leading-loose mx-2 font-semibold">
+      <div class="flex flex-row items-center w-full lg:w-1/3 bg-white lg:justify-end justify-center px-2 py-4 lg:px-0">
+        <Link to={{ pathname:"register" }} class="tracking-wider text-gray-600 bg-gray-200 px-2 text-sm rounded leading-loose mx-2 font-semibold">
           Register Here
-        </span>
-      </button>
+        </Link>
+      </div>
     </div> 
     </div>
     : null
