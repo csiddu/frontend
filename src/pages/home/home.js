@@ -4,6 +4,7 @@ import Landing from './Landing';
 import WWR from './WWR';
 import WDWD from './WDWD';
 import Upevents from './upevents';
+import Reco from './Reco';
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
         <Upevents />
         <WWR />
         <WDWD />
+        <Reco />
       </main>
     </div>
   );
