@@ -63,7 +63,7 @@ if (error) {
                           className="max-w-full rounded-lg shadow-xl"
                           src={event.image}/>
                       </div>
-                      <div className="w-full md:w-5/12 px-4">
+                      <div className="w-full md:w-2/3 px-4">
                         <div>
                           <h3 className="text-5xl text-center font-semibold">
                             {event.title}
