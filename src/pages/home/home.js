@@ -10,7 +10,6 @@ function Home() {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-grow">
         <Landing />
-        <p className="text-center font-bold text-3xl animate-pulse">Upcomming Event</p>
         <Upevents />
         <WWR />
         <WDWD />
