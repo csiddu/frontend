@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Landing() {
 
@@ -13,7 +14,7 @@ function Landing() {
               <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">We envision a dream where everyone is provided an opportunity to expand their horizons of knowledge. </p>
               <div className="p-10 max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="p-5 rounded-3xl text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Meet Our Team</a>
+                  <a className="p-5 rounded-3xl text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0"><Link to="/team">Meet Our Team</Link></a>
                 </div>
               </div>
             </div>
