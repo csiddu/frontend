@@ -6,7 +6,7 @@ const Dropdown = ({ isOpen, toggle }) => {
     <div
       className={
         isOpen
-          ? 'flex flex-col h-screen w-screen -mt-16 fixed items-center bg-white'
+          ? 'flex flex-col h-screen w-screen -mt-16 items-center bg-white'
           : 'hidden'}
       onClick={toggle}>
 
