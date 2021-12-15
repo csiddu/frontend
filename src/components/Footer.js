@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="flex mt-24 mb-6 flex-col justify-between">   
               <div className="flex self-center lg:space-x-28 space-x-5">
               <Link to="/" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Home</Link>
-                <Link to="/team" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Our Team</Link>
+                <Link to="/team" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Team</Link>
                 <Link to="/events" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Events</Link>
                 <a href="https://medium.com/@csi_ddu" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Blogs</a>
                 <Link to="/contact" className="md:block cursor-pointer text-gray-600 hover:text-white uppercase">Contact</Link>     
