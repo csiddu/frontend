@@ -6,8 +6,8 @@ import 'aos/dist/aos.css'
 
 import Home from './pages/home/home';
 import Navbar from './components/Navbar';
-import Dropdown from './components/Dropdown';
 import Footer from './components/Footer';
+import Drawer from 'components/Drawer';
 
 const Events = React.lazy(() => import('./pages/events'));
 const Blogs = React.lazy(() => import('./pages/blogs'));
@@ -49,7 +49,7 @@ function App() {
   return (
     <Suspense fallback={Loading}>
       <Navbar toggle={toggle} />
-      <Dropdown isOpen={isOpen} toggle={toggle} />
+      <Drawer isOpen={isOpen} setIsOpen={toggle} />
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/team' component={Team} />
