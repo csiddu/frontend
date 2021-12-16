@@ -98,6 +98,7 @@ if (error) {
                     </div>
                   </div>
               )   
+              else return ( <div>Loading...</div> )
     })}
             </div>
         );
