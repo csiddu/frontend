@@ -23,7 +23,7 @@ function Landing() {
           <div>
             <div className="relative flex justify-center mb-8" data-aos="zoom-y-out" data-aos-delay="450">
               <div className="flex flex-col justify-center">
-                <img className="mx-auto" src={require('../../assets/img/4.jpg').default} width="768" height="432" alt="Hero" />
+                <img className="mx-auto" src={require('../../assets/img/14.JPG').default} width="768" height="432" alt="Hero" />
               </div>
               
             </div>

@@ -50,7 +50,7 @@ export default function Team() {
                   <p className="mt-3 text-red-600 text-xs uppercase font-semibold">
                     {memb.position}
                   </p>
-                  {memb.tagline && start < 11? <p className="mt-3 text-xs text-gray-500 uppercase font-semibold">
+                  {memb.tagline && start < 11 ? <p className="mt-3 text-xs text-gray-500 uppercase font-semibold">
                     {memb.tagline}
                   </p> : null}
                   <div className="mt-3 flex lg:justify-around justify-evenly">
@@ -87,6 +87,25 @@ export default function Team() {
   } else {
     return (
       <div>
+        <div className="container mx-auto px-4 py-10">
+          <div className="items-center lg:flex">
+            <div className="w-2/2 md:w-2/3 lg:w-2/3 mx-12 ml-auto mr-auto p-5">
+              <img alt="..."
+                className="max-w-full rounded-lg shadow-xl"
+                src={require('../assets/img/15.JPG').default} />
+            </div>
+            <div className="w-full md:w-2/3 px-4">
+              <div>
+                <h3 className="text-3xl lg:text-4xl text-center font-semibold">
+                  Meet Our Amazing Team!
+                </h3>
+                <p className="mt-5 text-l text-center leading-relaxed text-gray-600">
+                <span>"Alone we can do so little, together we can do so much" <br></br>-Helen Keller </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         {TeamComp("Our Mentor", 0, 1)}
         {TeamComp("Core Team", 1, 3)}
         {TeamComp("Technical Team", 3, 6)}
