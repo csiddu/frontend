@@ -28,7 +28,7 @@ const EventReg = () => {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div><meta http-equiv="refresh" content={"0; url=https://docs.google.com/forms/d/e/1FAIpQLSeWdCuEK3J23ZPyQBEVA4aVMHvqHtJaS8aV-cBodXxxHXY1Aw/viewform"} /></div>;
   } else if (!isLoaded) {
     return <Loading />
   } else {

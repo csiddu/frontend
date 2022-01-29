@@ -28,7 +28,7 @@ const EventFeed = () => {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div><meta http-equiv="refresh" content={"0; url=https://docs.google.com/forms/d/e/1FAIpQLSf3T3tQzS10XDbLsy4Vhz8EHLvynbAr8p91mR5XK2MfDFG_cA/viewform"}></meta></div>;
   } else if (!isLoaded) {
     return <Loading />
   } else {
