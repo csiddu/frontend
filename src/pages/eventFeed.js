@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 const EventFeed = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [events, setEvents] = useState([]);
+  const [links, setlinks] = useState([]);
   useEffect(() => {
-    fetch("https://csiddu-website-backend.herokuapp.com/events")
+    fetch("https://csiddu-website-backend.herokuapp.com/links")
       .then(res => res.json())
       .then(
         (data) => {
           setIsLoaded(true);
-          setEvents(data);
+          setlinks(data);
         },
         (error) => {
           setIsLoaded(true);
@@ -34,24 +34,20 @@ const EventFeed = () => {
   } else {
     return (
       <div>
-        {events.sort((a, b) => (a.id) > (b.id) ? -1 : 0).map(event => (
-          event.register ?
-            <html>
-              <head>
-                <meta http-equiv="refresh" content={"0; url=" + event.flink} />
+        <html>
+          <head>
+            <meta http-equiv="refresh" content={"0; url=" + links.flink} />
 
-              </head>
+          </head>
 
-              <div className='p-10 flex flex-col font-franklin'>
+          <div className='p-10 flex flex-col font-franklin'>
 
-                <div className="lg:px-10 self-center mt-36  h-screen">
-                  <p className="text-7xl font-extrabold">Just a moment</p>
-                </div>
+            <div className="lg:px-10 self-center mt-36  h-screen">
+              <p className="text-7xl font-extrabold">Just a moment</p>
+            </div>
 
-              </div>
-            </html> :
-            null
-        ))}
+          </div>
+        </html>
       </div>
     );
   }
