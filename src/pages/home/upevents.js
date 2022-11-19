@@ -8,7 +8,7 @@ export default function Upevents() {
   "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   useEffect(() => {
-    fetch("https://csiddu-website-backend.herokuapp.com/events")
+    fetch(`${process.env.REACT_APP_SERVER}/events`)
       .then(res => res.json())
       .then((data) => {
         data.sort((a, b) => (a.id) < (b.id) ? -1 : 0);

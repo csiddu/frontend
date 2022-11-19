@@ -5,7 +5,7 @@ const EventReg = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [links, setlinks] = useState([]);
   useEffect(() => {
-    fetch("https://csiddu-website-backend.herokuapp.com/links")
+    fetch(`${process.env.REACT_APP_SERVER}/links`)
       .then(res => res.json())
       .then(
         (data) => {

@@ -12,7 +12,7 @@ const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        fetch("https://csiddu-website-backend.herokuapp.com/events")
+        fetch(`${process.env.REACT_APP_SERVER}/events`)
             .then(res => res.json())
             .then(
                 (data) => {
