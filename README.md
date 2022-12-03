@@ -10,4 +10,4 @@ This will install various required libaries, then run
 
 This will start the server of our website, which is locahost right now. Wait for few seconds for server to initialize. Then go to the chrome and type `http://localhost:3000/`
 
-### Note: Once you have done npm install successfully, no need to do it next time, just type `npm start` in the terminal
+### Note: Once you have done npm install successfully, no need to do it next time, just type `npm start` in the terminal.
