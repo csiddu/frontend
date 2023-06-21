@@ -1,0 +1,23 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh !important;
+    /* z-index: 100; */
+    padding: 5vw 3vw 3vw;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.navBar:hover {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(	65, 105, 225);
+    box-shadow: 4px 0px  rgb(65, 105, 225);
+    /* border-radius: 2px; */
+    transition: all 0.4s;
+    cursor : pointer;
+}
+
+

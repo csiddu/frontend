@@ -8,6 +8,8 @@ import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    {/* <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'/> */}
       <App />
     </BrowserRouter>
   </React.StrictMode>,
