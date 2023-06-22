@@ -225,3 +225,4 @@ function AddFaculty() {
 }
 
 export default AddFaculty;
+// ce_csi@ddu.ac.in

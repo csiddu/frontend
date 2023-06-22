@@ -31,7 +31,7 @@ function AddTeam() {
     }
 
     const req = await axios.post(`${process.env.REACT_APP_BACKEND}/admins/addTeam`,obj);
-    // console.log(req)
+    console.log(req.data)
     window.location.replace('/addMember?id='+req.data.id)
   }
 
