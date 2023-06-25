@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from './Dropdown';
 
 const Navbar = ({ toggle }) => {
   return (
@@ -24,13 +25,14 @@ const Navbar = ({ toggle }) => {
             d='M4 6h16M4 12h16M4 18h16' />
         </svg>
       </div>
-      <div className='pr-8 md:block hidden'>
+      <div className='pr-8 md:flex items-center md:block  hidden '>
         <Link to='/' className='p-4  md:text-gray-500'>
           Home
         </Link>
-        <Link to='/team' className='p-4 md:text-gray-500'>
+        {/* <Link to='/team' className='p-4 md:text-gray-500'>
           Our Team
-        </Link>
+        </Link> */}
+        <Dropdown />
         <Link to='/events' className='p-4 md:text-gray-500'>
           Events
         </Link>

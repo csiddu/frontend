@@ -1,20 +1,20 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { ReactSession } from 'react-client-session';
-import {Routes,  Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
-import SidePanel from 'pages/admin/SidePanel';
+import SidePanel from './pages/admin/SidePanel';
 import Home from './pages/home/home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Drawer from 'components/Drawer';
-import AddMember from 'pages/admin/AddMember';
-import AddFaculty from 'pages/admin/AddFaculty';
-import AddTeam from 'pages/admin/Add_team';
-import UpdateTeam from 'pages/admin/UpdateTeam';
-import ViewPastTeams from 'pages/admin/ViewPastTeams';
-import ShowMembersYearWise from 'pages/admin/ShowMembersYearWise';
-import AddEvent from 'pages/admin/AddEvent';
+import Drawer from './components/Drawer';
+import AddMember from './pages/admin/AddMember';
+import AddFaculty from './pages/admin/AddFaculty';
+import AddTeam from './pages/admin/Add_team';
+import UpdateTeam from './pages/admin/UpdateTeam';
+import ViewPastTeams from './pages/admin/ViewPastTeams';
+import ShowMembersYearWise from './pages/admin/ShowMembersYearWise';
+import AddEvent from './pages/admin/AddEvent';
 
 const Events = React.lazy(() => import('./pages/events'));
 const Blogs = React.lazy(() => import('./pages/blogs'));
@@ -27,7 +27,7 @@ ReactSession.setStoreType("localStorage");
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {  setIsOpen(!isOpen);  };
+  const toggle = () => { setIsOpen(!isOpen); };
   const location = useLocation();
 
   useEffect(() => {
@@ -53,31 +53,33 @@ function App() {
     window.addEventListener('resize', hideMenu);
 
     return () => {
-      window.removeEventListener('resize', hideMenu); };  });
+      window.removeEventListener('resize', hideMenu);
+    };
+  });
 
   return (
-    
+
     <Suspense fallback={Loading}>
       <Navbar toggle={toggle} />
-      
+
       <Drawer isOpen={isOpen} setIsOpen={toggle} />
       <Routes>
-        <Route path='/' exact element={<Home/>} />
-        <Route path='/team' element={<Team/>} />
-        <Route path="/addTeam" element={<AddTeam/>}/>
-        <Route path="/events" element={<Events/>}/>
-        <Route path="/blogs" element={<Blogs/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/register" element={<EventReg/>}/>
-        <Route path="/feedback" element={<EventFeed/>}/>
-        <Route path="/admin" element={<Admin/>}/>
-        <Route path="/addMember" element={<AddMember/>}/>
-        <Route path="/addFaculty" element={<AddFaculty/>}/>
-        <Route path="/updateTeam" element={<UpdateTeam/>}/>
-        <Route path="/allTeams" element={<ViewPastTeams/>}/>
-        <Route path="/teamMembersTable" element={<ShowMembersYearWise/>}/>
-        <Route path="/addEvent" element={<AddEvent/>}/>
-        <Route path="*" element={<SidePanel/>} />
+        <Route path='/' exact element={<Home />} />
+        <Route path='/team' element={<Team />} />
+        <Route path="/addTeam" element={<AddTeam />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/register" element={<EventReg />} />
+        <Route path="/feedback" element={<EventFeed />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/addMember" element={<AddMember />} />
+        <Route path="/addFaculty" element={<AddFaculty />} />
+        <Route path="/updateTeam" element={<UpdateTeam />} />
+        <Route path="/allTeams" element={<ViewPastTeams />} />
+        <Route path="/teamMembersTable" element={<ShowMembersYearWise />} />
+        <Route path="/addEvent" element={<AddEvent />} />
+        <Route path="*" element={<SidePanel />} />
 
       </Routes>
       <Footer />
