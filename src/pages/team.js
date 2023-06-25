@@ -1,24 +1,44 @@
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { useLocation } from 'react-router-dom';
+
+
+
+
+// import { getStorage, ref } from "firebase/storage";
+// const storage = getStorage();
+// const pathReference = ref(storage, 'images/stars.jpg');
+
+
+
 
 export default function Team() {
+
   const [error, setError] = useState(null);
   const [team, setTeam] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const { state } = useLocation();
+
+
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER}/teams`)
-      .then(res => res.json())
-      .then((data) => {
-        data.sort((a, b) => (a.id) < (b.id) ? -1 : 0);
-        setTeam(data);
-        setIsLoaded(true)
-      },
-        (error) => {
-          setIsLoaded(false);
-          setError(error);
-        })
+    console.log(state);
+
+    setTeam(state.teamMembers);
+    setIsLoaded(true);
+
+    // fetch(`${process.env.REACT_APP_SERVER}/teams`)
+    //   .then(res => res.json())
+    //   .then((data) => {
+    //     data.sort((a, b) => (a.id) < (b.id) ? -1 : 0);
+    //     setTeam(data);
+    //     setIsLoaded(true)
+    //   },
+    //     (error) => {
+    //       setIsLoaded(false);
+    //       setError(error);
+    //     })
   }, [])
 
   const Loading = () => {
@@ -36,7 +56,7 @@ export default function Team() {
           {sec}
         </h1>
         <div className="mt-10 flex lg:flex-row flex-col justify-center">
-          {team.slice(start, end).map(memb => (
+          {team.map(memb => (  //.slice(start, end)
             <div className="md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-5">
               <div className="px-6 lg:w-10/12 py-10">
                 <div className="lg:w-9/12 w-32 shadow-2xl rounded-full max-w-full mx-auto">
@@ -65,11 +85,11 @@ export default function Team() {
                         <FontAwesomeIcon icon={faGithub} size="lg" />
                       </a>
                     </div> : null}
-                    {memb.twitter && start < 11 ? <div className="text-blue-400 focus:outline-none">
+                    {/* {memb.twitter && start < 11 ? <div className="text-blue-400 focus:outline-none">
                       <a href={memb.twitter} target="_blank" rel="noreferrer" >
                         <FontAwesomeIcon icon={faTwitter} size="lg" />
                       </a>
-                    </div> : null}
+                    </div> : null} */}
                   </div>
                 </div>
               </div>

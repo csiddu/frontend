@@ -1,12 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+
 const Dropdown = () => {
+
+    const navigate = useNavigate();
+
+    const [yearList,setYearList] = useState([]);
+
+    useEffect(()=>{
+        axios.get(`${process.env.REACT_APP_BACKEND}/admins/getYears`).then((res)=>{
+            setYearList(res.data.allTeam)
+          })
+    },[])
+
+    function clickedYear(year){
+        axios.get(`${process.env.REACT_APP_BACKEND}/admins/teamByYear?year=${year}`).then((obj)=>{
+            
+            navigate('/team',{state:obj.data.team});
+        })
+    }
+
     const [isOpen, setIsOpen] = useState(false);
     const getCurrentYear = () => new Date().getFullYear();
     const getYearRange = (startYear) => `${startYear}-${startYear + 1}`;
-    const years = Array.from({ length: 10 }, (_, index) => getYearRange(getCurrentYear() - index));
+    // const years = Array.from({ length: 10 }, (_, index) => getYearRange(getCurrentYear() - index));
     return (
         <div className="p-5 md:p-1 text-2xl md:text-base text-center md:relavtive">
             <Link
@@ -14,23 +35,23 @@ const Dropdown = () => {
                 onMouseEnter={() => setIsOpen(true)}
             >
                 Our Team
-                <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
+                {/* <FontAwesomeIcon icon={faChevronDown} className="ml-1" /> */}
             </Link>
             {isOpen && (
                 <div className="absolute z-10 w-[95%] md:w-[20%] md:mt-3 mb-[5%] origin-top-right bg-white border border-gray-100 rounded-md shadow-lg transition-transform duration-200 ease-in-out transform opacity-100 translate-y-[5%] " onMouseLeave={() => setIsOpen(false)}>
-                    <div className="max-h-40 overflow-y-auto">
-                        {years.map((year) => (
+                    <div className="max-h-40 overflow-y-auto ">
+                        {yearList.map((i) => (
                             <a
-                                key={year}
-                                href="/team"
+                                key={i.year}
                                 className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                                 onClick={() => {
                                     // Handle year selection
-                                    console.log(`Selected year: ${year}`);
+                                    console.log(`Selected year: ${i.year}`);
                                     setIsOpen(false);
+                                    clickedYear(i.year);
                                 }}
                             >
-                                {year}
+                                {i.year -1 } - {i.year}
                             </a>
                         ))}
                     </div>
