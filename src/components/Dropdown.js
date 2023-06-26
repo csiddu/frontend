@@ -18,9 +18,10 @@ const Dropdown = () => {
     },[])
 
     function clickedYear(year){
+        console.log("hiiii")
         axios.get(`${process.env.REACT_APP_BACKEND}/admins/teamByYear?year=${year}`).then((obj)=>{
-            
-            navigate('/team',{state:obj.data.team});
+            console.log(obj.data)
+            // navigate('/team',{state:obj.data.team});
         })
     }
 
@@ -46,7 +47,7 @@ const Dropdown = () => {
                                 className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                                 onClick={() => {
                                     // Handle year selection
-                                    console.log(`Selected year: ${i.year}`);
+                                    // console.log(`Selected year: ${i.year}`);
                                     setIsOpen(false);
                                     clickedYear(i.year);
                                 }}
