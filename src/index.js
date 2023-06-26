@@ -1,20 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import 'tailwindcss/tailwind.css';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root1 = createRoot(container);
+root1.render(
   <React.StrictMode>
     <BrowserRouter>
-    {/* <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'/>
-    <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'/> */}
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

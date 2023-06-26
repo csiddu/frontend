@@ -3,8 +3,8 @@ import React, { useState, useEffect }  from 'react';
 const Events = () => {
 const Loading = () => {
     return (
-      <div className="flex w-screen h-screen justify-center items-center">
-        <div className="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-600"></div>
+      <div class="flex w-screen h-screen justify-center items-center">
+        <div class="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-600"></div>
       </div>
     )
   }
