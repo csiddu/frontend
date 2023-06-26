@@ -33,7 +33,7 @@ const Dropdown = () => {
                 onMouseEnter={() => setIsOpen(true)}
             >
                 Our Team
-                <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
+                {/* <FontAwesomeIcon icon={faChevronDown} className="ml-1" /> */}
             </Link>
             {isOpen && (
                 <div className="absolute z-10 w-[95%] md:w-[20%] md:mt-3 mb-[5%] origin-top-right bg-white border border-gray-100 rounded-md shadow-lg transition-transform duration-200 ease-in-out transform opacity-100 translate-y-[5%] " onMouseLeave={() => setIsOpen(false)}>
