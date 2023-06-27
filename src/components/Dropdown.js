@@ -21,7 +21,7 @@ const Dropdown = () => {
         console.log("hiiii")
         axios.get(`${process.env.REACT_APP_BACKEND}/admins/teamByYear?year=${year}`).then((obj)=>{
             console.log(obj.data)
-            // navigate('/team',{state:obj.data.team});
+            navigate('/team',{state:obj.data.team});
         })
     }
 

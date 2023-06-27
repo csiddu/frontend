@@ -25,8 +25,9 @@ export default function Team() {
   useEffect(() => {
     console.log(state);
 
-    setTeam(state.teamMembers);
+    setTeam(state.members);
     setIsLoaded(true);
+    console.log(state.teamMembers)
 
     // fetch(`${process.env.REACT_APP_SERVER}/teams`)
     //   .then(res => res.json())
@@ -60,7 +61,7 @@ export default function Team() {
             <div className="md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-5">
               <div className="px-6 lg:w-10/12 py-10">
                 <div className="lg:w-9/12 w-32 shadow-2xl rounded-full max-w-full mx-auto">
-                  <img alt="..." src={memb.image}
+                  <img alt="..." src={memb.url}
                     className="rounded-full" />
                 </div>
                 <div className="mt-6 text-center">
