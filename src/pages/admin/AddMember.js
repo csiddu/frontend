@@ -31,6 +31,8 @@ function AddMember() {
     department : "",
     github : "",
     linkdn : "",
+    teamName: "",
+    tagline : ""
   });
 
   const [availabledata, setAvailabledata] = useState(false);
@@ -53,7 +55,7 @@ function AddMember() {
 
     setMember({...Member,department:dept.current.value})
 
-    if(Member.firstName==="" || Member.lastName==="" || Member.email==="" || Member.phoneNumber==="" || Member.linkdn==="" || Member.department==-1 || Member.position==""){
+    if(Member.firstName==="" || Member.lastName==="" || Member.email==="" || Member.phoneNumber==="" || Member.linkdn==="" || Member.department==-1 || Member.position=="" || Member.teamName=="" || Member.tagline==""){
       setErr("Please Enter All The Fields")
       document.getElementById("error").value = "Please Enter All The Fields!!";
     }
@@ -191,6 +193,34 @@ function AddMember() {
                     type="text"
                     name ="position"
                     placeholder="Joined As... ex.Technical Head"
+                    onChange={getData}
+
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-wrap -mx-3 mb-2">
+                <div className="w-full px-3">
+                  <input
+                    className="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-teamName"
+                    type="text"
+                    name ="teamName"
+                    placeholder="ex.Technical Team"
+                    onChange={getData}
+
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-wrap -mx-3 mb-2">
+                <div className="w-full px-3">
+                  <input
+                    className="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-tagline"
+                    type="text"
+                    name ="tagline"
+                    placeholder="Tagline that fits into your personality"
                     onChange={getData}
 
                   />
